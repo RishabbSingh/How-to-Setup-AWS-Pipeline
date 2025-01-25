@@ -18,7 +18,7 @@ Attach the IAM Role to your EC2 instance.
 
 ### 3. **Install CodeDeploy Agent on your EC2 instance (if not installed):**
 
-bash
+```bash
 Copy
 Edit
 sudo yum update
@@ -27,12 +27,13 @@ sudo yum install -y wget
 wget https://github.com/aws/aws-codedeploy-agent/releases/download/latest/codedeploy-agent-1.0-1.0.x86_64.rpm
 sudo rpm -i codedeploy-agent-1.0-1.0.x86_64.rpm
 sudo service codedeploy-agent start
-2. Prepare Deployment Scripts
-Create the appspec.yml file
-The appspec.yml file should be structured as follows:
-yaml
-Copy
-Edit
+
+```
+
+### 2. **Prepare Deployment Scripts**
+- Create the appspec.yml file
+- The appspec.yml file should be structured as follows:
+```bash
 version: 0.0
 os: linux
 files:
@@ -51,8 +52,10 @@ hooks:
     - location: scripts/application_start.sh
       timeout: 300
       runas: ubuntu
+```
+
 Create the application_start.sh file
-bash
+bash 
 Copy
 Edit
 #!/bin/bash
