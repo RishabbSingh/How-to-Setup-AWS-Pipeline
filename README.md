@@ -96,20 +96,20 @@ fi
 - Appropriate IAM roles for CodeDeploy.
 ### Step 4: **Create CodeDeploy Deployment Group**
 1. Create Deployment Group:
-- Inside your CodeDeploy application, create a Deployment Group.
-- Define the `Deployment Group name` (e.g., MyApp-DeploymentGroup).
+   - Inside your CodeDeploy application, create a Deployment Group.
+   - Define the `Deployment Group name` (e.g., MyApp-DeploymentGroup).
 
 2. Specify `EC2 Instances` with `EC2 Tag`:
-- Use the EC2 tag to define which EC2 instances should be part of the deployment group:
-- Tag Name: name
-- Tag Value: ec2-instance-name
-- This will target the EC2 instances that have this tag attached.
+   - Use the EC2 tag to define which EC2 instances should be part of the deployment group:
+   - `Tag Name`: `name`
+   - `Tag Value`: `ec2-instance-name`
+   - This will target the EC2 instances that have this tag attached.
 
 3. Select Deployment Configuration:
-- Choose In-Place as the deployment strategy. This will update the application on the existing EC2 instances without creating a new environment.
-- In-Place Deployment means the code is deployed directly to the EC2 instances that are already part of the deployment group.
+  - Choose `In-Place` as the deployment strategy. This will update the application on the existing EC2 instances without creating a new environment.
+  - `In-Place` Deployment means the code is deployed directly to the EC2 instances that are already part of the deployment group.
 
 4.Set IAM Role Permissions:
-- Ensure that the IAM Role for CodeDeploy has the following permissions:
-- `AmazonS3ReadOnlyAccess`: This grants read-only access to the S3 bucket where the source code is stored.
-- `AWSCodeDeployRole`: This role is required for CodeDeploy to interact with EC2 instances and other resources during the deployment process.
+  - Ensure that the IAM Role for CodeDeploy has the following permissions:
+  - `AmazonS3ReadOnlyAccess`: This grants read-only access to the S3 bucket where the source code is stored.
+  - `AWSCodeDeployRole`: This role is required for CodeDeploy to interact with EC2 instances and other resources during the deployment process.
