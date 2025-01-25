@@ -8,15 +8,15 @@ Below is a step-by-step documentation on how we automate the deployment of a Nod
 - AWS `CodeDeploy` set up for EC2 instances
 - `Node.js` and `npm` installed
 
-Step-by-Step Guide
-1. Setup EC2 Instance and IAM Roles
+### Step-by-Step Guide
+#### 1. **Setup EC2 Instance and IAM Roles**
    
-2.Create an IAM Role for EC2 with permissions:
-AmazonS3ReadOnlyAccess
-AWSCodeDeployRole
+#### 2. **Create an IAM Role for EC2 with permissions:**
+- `AmazonS3ReadOnlyAccess`
+- `AWSCodeDeployRole`
 Attach the IAM Role to your EC2 instance.
 
-3. Install CodeDeploy Agent on your EC2 instance (if not installed):
+### 3. **Install CodeDeploy Agent on your EC2 instance (if not installed):**
 
 bash
 Copy
