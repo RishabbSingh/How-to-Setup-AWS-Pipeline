@@ -93,6 +93,7 @@ fi
 - Create an Application in AWS CodeDeploy.
 - Create a Deployment Group with:
 - EC2 instances tagged using a unique tag (name, ec2-instance-name).
+  
 - Appropriate IAM roles for CodeDeploy -
   - `AmazonS3ReadOnlyAccess`: This grants read-only access to the S3 bucket where the source code is stored.
   - `AWSCodeDeployRole`: This role is required for CodeDeploy to interact with EC2 instances and other resources during the deployment process.
