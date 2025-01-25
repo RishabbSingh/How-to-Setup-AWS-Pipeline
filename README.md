@@ -19,8 +19,6 @@ Attach the IAM Role to your EC2 instance.
 ### 3. **Install CodeDeploy Agent on your EC2 instance (if not installed):**
 
 ```bash
-Copy
-Edit
 sudo yum update
 sudo yum install -y ruby
 sudo yum install -y wget
@@ -54,10 +52,9 @@ hooks:
       runas: ubuntu
 ```
 
-Create the application_start.sh file
-bash 
-Copy
-Edit
+- Create the application_start.sh file
+```bash 
+
 #!/bin/bash
 sudo chmod -R 777 /home/ubuntu/
 cd /home/ubuntu/CMS-UEI/src  
@@ -70,17 +67,15 @@ npm install
 
 pm2 restart index || pm2 start index.js --name index
 pm2 save
-Create the application_stop.sh file
-bash
-Copy
-Edit
+```
+- Create the application_stop.sh file
+```bash
 #!/bin/bash
 # Stopping existing node servers
 # pkill node
-Create the before_install.sh file
-bash
-Copy
-Edit
+```
+- Create the before_install.sh file
+```bash
 #!/bin/bash
 # Download node and npm
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash
@@ -93,10 +88,9 @@ if [ ! -d "$DIR" ]; then
   echo "Creating ${DIR} directory"
   mkdir ${DIR}
 fi
-3. Deploy Using AWS CodeDeploy
-Create an Application in AWS CodeDeploy.
-
-Create a Deployment Group with:
-
-EC2 instances tagged using a unique tag (name, ec2-instance-name).
-Appropriate IAM roles for CodeDeploy.
+```
+### 3. **Deploy Using AWS CodeDeploy**
+- Create an Application in AWS CodeDeploy.
+- Create a Deployment Group with:
+- EC2 instances tagged using a unique tag (name, ec2-instance-name).
+- Appropriate IAM roles for CodeDeploy.
